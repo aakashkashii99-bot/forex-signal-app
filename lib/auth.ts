@@ -39,14 +39,14 @@ export async function revokeAccessKey(key: string) {
   record.active = false;
   await redis.set(KEYS.accessKey(key), record);
   return true;
-}
-
-export function checkAdminSecret(providedSecret: string | null): boolean {
+}export function checkAdminSecret(providedSecret: string | null): boolean {
   const real = process.env.ADMIN_SECRET;
   if (!real || !providedSecret) return false;
-  // constant-time-ish comparison
+  const a = providedSecret.trim();
+  const b = real.trim();
   return (
-    providedSecret.length === real.length &&
-    crypto.timingSafeEqual(Buffer.from(providedSecret), Buffer.from(real))
+    a.length === b.length &&
+    crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b))
   );
-                                  }
+}
+
