@@ -1,0 +1,129 @@
+:root {
+  --bg: #0a0d12;
+  --card: #12161d;
+  --border: #232a35;
+  --text: #e7ebf0;
+  --muted: #7c8896;
+  --teal: #3ee8c8;
+  --orange: #f0964f;
+  --green: #3ecf8e;
+  --red: #e8677a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+.header {
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.symbol {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.score.high { color: var(--green); }
+.score.mid { color: var(--orange); }
+.score.low { color: var(--muted); }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.tag.bullish { color: var(--green); border-color: var(--green); }
+.tag.bearish { color: var(--red); border-color: var(--red); }
+
+.narration {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px 18px;
+  background: var(--teal);
+  color: #05100d;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.disclaimer {
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+  margin-top: 28px;
+  line-height: 1.6;
+}
+
+.error { color: var(--red); font-size: 13px; margin-top: 8px; }
+
+.keyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  font-size: 13px;
+  }
